@@ -1,0 +1,19 @@
+.containerOne{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 70%;
+    height: 60%;
+    text-align: justify;
+}
+span{
+    font-size: 1.5em;
+}
+h1{
+    padding-bottom: 40px;
+    padding-top: 40px;
+
+}
