@@ -43,7 +43,7 @@ export const Header = () => {
     return (
         <>
             {['xl'].map((expand) => (
-                <Navbar key={expand} bg="light" expand={expand} className="d-block w-100">
+                <Navbar key={expand} bg="dark" variant="dark" expand={expand} className="d-block w-100">
                     <Container fluid>
                         <Navbar.Brand onClick={() => navClose(`/main`) }>Крон</Navbar.Brand>
                         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />

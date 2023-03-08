@@ -6,7 +6,7 @@ export const FooterComponent = () => {
     const navigate = useNavigate();
 
   return (
-    <MDBFooter bgColor='light' className='d-block w-100 text-center text-lg-start text-muted'>
+    <MDBFooter bgColor='dark' className='d-block w-100 text-center text-lg-start text-muted'>
       <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
         <div className='me-5 d-none d-lg-block'>
           <span>Наши социальные сети:</span>

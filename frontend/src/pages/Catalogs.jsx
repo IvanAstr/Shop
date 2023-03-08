@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams, Link } from 'react-router-dom'
 import { useHttp } from '../hooks/http.hooks';
+import Form from 'react-bootstrap/Form';
 
 import { Products } from '../components/card/productCard';
 import { Search } from '../components/search/searchHeader';
@@ -16,7 +17,15 @@ export const Catalogs = () => {
 
     const [products, setProducts] = useState([]);
 
-    const { filterProducts, setFilterProducts } = useState([])
+    const [searchName, setSearchName] = useState("");
+
+    const filterName = products.filter( product =>{
+        return product[1].toLowerCase().includes(searchName.toLowerCase());
+    })
+
+    
+
+    const { filterProducts, setFilterProducts } = useState([]);
 
     const fetchProduct = React.useCallback(async () => {
         try {
@@ -37,11 +46,19 @@ export const Catalogs = () => {
     return (
         <>
             <div className="filterContainer">
-                <Search setFilterProducts={setFilterProducts} filterProducts={filterProducts} products={products} />
+                <Form className="Search">
+                    <Form.Control
+                        // value={searchTerm}
+                        type="search"
+                        placeholder="Поиск..."
+                        className="me-2"
+                        aria-label="Search"
+                        onChange={(e) => setSearchName(e.target.value)}
+                    />
+                </Form>
             </div>
-            {filterProducts != null &&
                 <div className="containerCard">
-                    {products.map((product, index) => {
+                    {filterName.map((product, index) => {
                         console.log(id)
 
                         return (
@@ -51,7 +68,7 @@ export const Catalogs = () => {
 
                     })}
                 </div>
-            }
+            
         </>
     );
 };
