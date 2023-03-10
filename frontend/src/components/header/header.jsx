@@ -45,7 +45,7 @@ export const Header = () => {
             {['xl'].map((expand) => (
                 <Navbar key={expand} bg="dark" variant="dark" expand={expand} className="d-block w-100">
                     <Container fluid>
-                        <Navbar.Brand onClick={() => navClose(`/main`) }>Крон</Navbar.Brand>
+                        <Navbar.Brand onClick={() => navClose(`/`) }>Крон</Navbar.Brand>
                         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                         <Navbar.Offcanvas
                             id={`offcanvasNavbar-expand-${expand}`}
@@ -54,10 +54,12 @@ export const Header = () => {
                         >
                             <Offcanvas.Body>
                                 <Nav className="justify-content-space-around flex-grow-1 pe-3" >
-                                    <Nav.Link  onClick={() => navClose('/main')}>Главная</Nav.Link>
+                                    <Nav.Link  onClick={() => navClose('/')}>Главная</Nav.Link>
                                     <Nav.Link onClick={() => navClose(`/about`)}>О нас</Nav.Link>
+                                    <Nav.Link onClick={() => navClose(`/contacts`)}>Контакты</Nav.Link>
+
                                     <NavDropdown
-                                        title="Dropdown"
+                                        title="Мужчинам"
                                         id={`offcanvasNavbarDropdown-expand-${expand}`}
                                     >
                                         {catalog.map((item, index) => {
@@ -73,6 +75,41 @@ export const Header = () => {
                                             Категории
                                         </NavDropdown.Item>
                                     </NavDropdown>
+
+                                    <NavDropdown
+                                        title="Женщинам"
+                                        id={`offcanvasNavbarDropdown-expand-${expand}`}
+                                    >
+                                        {catalog.map((item, index) => {
+                                            // console.log(item)
+                                            return (
+                                                // <NavDropdown.Item key={index} onClick={()=>navigate(`/catalogs/${item[0]}`)}>{item[1]}</NavDropdown.Item>
+                                                <NavDropdown.Item key={index} href={`/catalogs/${item[0]}`}>{item[1]}</NavDropdown.Item>
+                                            )
+                                        })}
+
+                                        <NavDropdown.Divider />
+                                        <NavDropdown.Item >
+                                            Категории
+                                        </NavDropdown.Item>
+                                    </NavDropdown>
+                                    <NavDropdown
+                                        title="Аксесуары"
+                                        id={`offcanvasNavbarDropdown-expand-${expand}`}
+                                    >
+                                        {catalog.map((item, index) => {
+                                            // console.log(item)
+                                            return (
+                                                // <NavDropdown.Item key={index} onClick={()=>navigate(`/catalogs/${item[0]}`)}>{item[1]}</NavDropdown.Item>
+                                                <NavDropdown.Item key={index} href={`/catalogs/${item[0]}`}>{item[1]}</NavDropdown.Item>
+                                            )
+                                        })}
+
+                                        <NavDropdown.Divider />
+                          
+                                    </NavDropdown>
+
+
                                 </Nav>
                             </Offcanvas.Body>
                         </Navbar.Offcanvas>

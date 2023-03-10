@@ -20,8 +20,8 @@ export const DetailProduct = ({ name, description, color, gender, price, categor
                     </Card>
                 </div>
 
-                <div className="contentSection">
-                    <Card>
+                <div className="contentSection" >
+                    <Card style={{ width: '100%' }}>
                         <Card.Header>
                             <Nav variant="pills">
                                 <Nav.Item>
@@ -32,7 +32,7 @@ export const DetailProduct = ({ name, description, color, gender, price, categor
                             </Nav>
                         </Card.Header>
                         <Card.Body>
-                            <Card.Title>{name}</Card.Title>
+                            <Card.Title style={{ width: '50%' }}>{name}</Card.Title>
                             <Card.Text>
                                 <p>Описание: {description}</p>
                                 <p>Цвеет: {color}</p>

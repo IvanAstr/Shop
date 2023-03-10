@@ -8,7 +8,7 @@ export const About = () => {
         <>
             <div className="containerOne">
                 <h1>
-                    <Badge bg="secondary">О нас</Badge>
+                    <Badge bg="primary">О нас</Badge>
                 </h1>
 
                 <span>
@@ -23,7 +23,7 @@ export const About = () => {
                 </span>
 
                 <h1>
-                    <Badge bg="secondary">Мы создаем:</Badge>
+                    <Badge bg="primary">Мы создаем:</Badge>
                 </h1>
                 <TabLayoutComponent/>
             </div>

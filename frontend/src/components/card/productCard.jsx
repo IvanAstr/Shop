@@ -8,7 +8,7 @@ export const Products= ({id, title, description}) => {
   const navigate = useNavigate();
 
   return (
-    <Card style={{ width: '18rem', marginBottom: "40px" }}>
+    <Card style={{ width: '18rem', marginBottom: "40px", margin:"15px" }}>
       <Card.Img variant="top" src="../img/card03.jpg" />
       <Card.Body>
         <Card.Title>{title}</Card.Title>

@@ -6,10 +6,9 @@ export const HomeCardComponent = () => {
             <Card style={{ width: '18rem', margin: "5px" }}>
                 <Card.Img variant="top" src="img/card01.jpg" />
                 <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>Товары 1</Card.Title>
                     <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
+                        Красота
                     </Card.Text>
                 </Card.Body>
             </Card>
@@ -17,10 +16,9 @@ export const HomeCardComponent = () => {
             <Card style={{ width: '18rem', margin: "5px" }}>
                 <Card.Img variant="top2" src="img/card02.jpg" />
                 <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>Товары 2</Card.Title>
                     <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
+                    Красота 2
                     </Card.Text>
                 </Card.Body>
             </Card>
@@ -28,10 +26,9 @@ export const HomeCardComponent = () => {
             <Card style={{ width: '18rem', margin: "5px" }}>
                 <Card.Img variant="top3" src="img/card03.jpg" />
                 <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>Товары 3</Card.Title>
                     <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
+                    Красота 3
                     </Card.Text>
                 </Card.Body>
             </Card>
@@ -39,10 +36,9 @@ export const HomeCardComponent = () => {
             <Card style={{ width: '18rem', margin: "5px" }}>
                 <Card.Img variant="top4" src="img/card04.jpg" />
                 <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>Товары 4</Card.Title>
                     <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
+                    Красота 4
                     </Card.Text>
                 </Card.Body>
             </Card>
@@ -50,10 +46,9 @@ export const HomeCardComponent = () => {
             <Card style={{ width: '18rem', margin: "5px" }}>
                 <Card.Img variant="top5" src="img/card05.jpg" />
                 <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>Товары 5</Card.Title>
                     <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
+                    Красота 5
                     </Card.Text>
                 </Card.Body>
             </Card>
@@ -61,10 +56,9 @@ export const HomeCardComponent = () => {
             <Card style={{ width: '18rem', margin: "5px" }}>
                 <Card.Img variant="top6" src="img/card06.jpg" />
                 <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>Товары 6</Card.Title>
                     <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
+                    Красота 6
                     </Card.Text>
                 </Card.Body>
             </Card>

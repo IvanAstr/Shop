@@ -37,7 +37,7 @@ export const Home = () => {
 
             <div className="containerFour">
                 <h1>
-                    Почему мы <Badge bg="secondary">?</Badge>
+                    Почему мы <Badge bg="primary">?</Badge>
                 </h1>
                 <AccrodionComponent />
             </div>
