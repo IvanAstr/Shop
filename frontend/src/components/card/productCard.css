@@ -1,0 +1,16 @@
+.ls-2{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+}
+.btn{
+    width: 112px;
+}
+.card{
+
+}
+.img{
+    width:"286";
+    height: '180px';
+}

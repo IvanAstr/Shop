@@ -25,6 +25,7 @@ export const Product = () => {
                         response.gender,
                         response.price,
                         response.category,
+                        response.img,
                      
                 ]);
         }
@@ -51,6 +52,7 @@ export const Product = () => {
                     gender={product[4]}
                     price={product[5]}
                     category={product[6]}
+                    img = {product[7]}
                 />
             </div>
 

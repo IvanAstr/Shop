@@ -1,0 +1,23 @@
+.basket{
+    display: flex;
+
+    flex-direction: row;
+    justify-content:space-around;
+    align-items:center;
+    flex-wrap: wrap;
+}
+
+.basketProduct{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items:center;
+    padding: 20px;
+    margin: 0 20px 20px;
+}
+
+.sektion{
+    min-height: 450px;
+}
+
+

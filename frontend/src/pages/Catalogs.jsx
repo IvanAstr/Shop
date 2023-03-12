@@ -31,7 +31,7 @@ export const Catalogs = () => {
         try {
             const response = await request(`/api/category/${id}`, 'GET', null);
             console.log(response);
-            setProducts([...products, ...response.map(item => [item.id, item.name])]);
+            setProducts([...products, ...response.map(item => [item.id, item.name,item.price, item.img])]);
         }
         catch (err) {
             console.log(err);
@@ -63,7 +63,7 @@ export const Catalogs = () => {
 
                         return (
                             <>
-                                <Products key={index} id={product[0]} title={product[1]} description={product[2]} />
+                                <Products key={index} id={product[0]} title={product[1]} price={product[2]} img={product[3]} />
                             </>)
 
                     })}

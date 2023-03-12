@@ -14,7 +14,7 @@ const product = sequelize.define('product', {
     allowNull: false
   },
   description: {
-    type: DataTypes.STRING,
+    type: DataTypes.STRING(500),
     allowNull: false
   },
   color: {
@@ -39,6 +39,10 @@ const product = sequelize.define('product', {
   },
   price: {
     type: DataTypes.INTEGER,
+    allowNull: false
+  },
+    img: {
+    type: DataTypes.STRING(400),
     allowNull: false
   }
 

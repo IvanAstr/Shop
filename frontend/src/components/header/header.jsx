@@ -8,11 +8,19 @@ import React, { useState, Link } from 'react';
 import { useHttp } from '../../hooks/http.hooks';
 import { useNavigate } from 'react-router-dom';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { BsCart3 } from "react-icons/bs";
+import { BsBoxArrowRight } from "react-icons/bs";
+import Basket from "../../state/basket";
+
+import './header.css';
 
 
 // import {OffcanvasExample} from "../select/selectHeader"
 
 export const Header = () => {
+    //basket
+
+    //end basket
 
     const navigate = useNavigate();
     const { request, loading } = useHttp();
@@ -45,7 +53,7 @@ export const Header = () => {
             {['xl'].map((expand) => (
                 <Navbar key={expand} bg="dark" variant="dark" expand={expand} className="d-block w-100">
                     <Container fluid>
-                        <Navbar.Brand onClick={() => navClose(`/`) }>Крон</Navbar.Brand>
+                        <Navbar.Brand onClick={() => navClose(`/`)}>Крон</Navbar.Brand>
                         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                         <Navbar.Offcanvas
                             id={`offcanvasNavbar-expand-${expand}`}
@@ -53,13 +61,13 @@ export const Header = () => {
                             placement="end"
                         >
                             <Offcanvas.Body>
-                                <Nav className="justify-content-space-around flex-grow-1 pe-3" >
-                                    <Nav.Link  onClick={() => navClose('/')}>Главная</Nav.Link>
+                                <Nav className="justify-content-space-around align-items-center flex-grow-1 pe-3" >
+                                    <Nav.Link onClick={() => navClose('/')}>Главная</Nav.Link>
                                     <Nav.Link onClick={() => navClose(`/about`)}>О нас</Nav.Link>
                                     <Nav.Link onClick={() => navClose(`/contacts`)}>Контакты</Nav.Link>
 
                                     <NavDropdown
-                                        title="Мужчинам"
+                                        title="Каталог"
                                         id={`offcanvasNavbarDropdown-expand-${expand}`}
                                     >
                                         {catalog.map((item, index) => {
@@ -76,24 +84,7 @@ export const Header = () => {
                                         </NavDropdown.Item>
                                     </NavDropdown>
 
-                                    <NavDropdown
-                                        title="Женщинам"
-                                        id={`offcanvasNavbarDropdown-expand-${expand}`}
-                                    >
-                                        {catalog.map((item, index) => {
-                                            // console.log(item)
-                                            return (
-                                                // <NavDropdown.Item key={index} onClick={()=>navigate(`/catalogs/${item[0]}`)}>{item[1]}</NavDropdown.Item>
-                                                <NavDropdown.Item key={index} href={`/catalogs/${item[0]}`}>{item[1]}</NavDropdown.Item>
-                                            )
-                                        })}
-
-                                        <NavDropdown.Divider />
-                                        <NavDropdown.Item >
-                                            Категории
-                                        </NavDropdown.Item>
-                                    </NavDropdown>
-                                    <NavDropdown
+                                    {/* <NavDropdown
                                         title="Аксесуары"
                                         id={`offcanvasNavbarDropdown-expand-${expand}`}
                                     >
@@ -106,59 +97,23 @@ export const Header = () => {
                                         })}
 
                                         <NavDropdown.Divider />
-                          
-                                    </NavDropdown>
 
+                                    </NavDropdown> */}
 
                                 </Nav>
+                                <Form className="d-flex">
+
+                                    <Button className='basket' onClick={() => navClose('/basket')} variant="light">
+                                        <BsCart3/>
+                                    </Button>
+
+                                </Form>
                             </Offcanvas.Body>
                         </Navbar.Offcanvas>
                     </Container>
                 </Navbar>
             ))}
 
-
-            {/* <OffcanvasExample/>
-            <Navbar className="d-block w-100" bg="light" variant="light" expand="lg">
-                <Container fluid>
-                    <Navbar.Brand onClick={() => navigate(`/main`)}>Крон</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="navbarScroll" />
-                    <Navbar.Collapse id="navbarScroll">
-                        <Nav
-                            className="me-auto my-2 my-lg-0"
-                            style={{ maxHeight: '100px' }}
-                            navbarScroll
-                        >
-                            <Nav.Link onClick={() => navigate(`/main`)}>Главная</Nav.Link>
-                            <Nav.Link onClick={() => navigate(`/about`)}>О нас</Nav.Link>
-                            <NavDropdown title="Каталог" id="navbarScrollingDropdown">
-
-                                {catalog.map((item, index) => {
-                                    // console.log(item)
-                                    return (
-                                        // <NavDropdown.Item key={index} onClick={()=>navigate(`/catalogs/${item[0]}`)}>{item[1]}</NavDropdown.Item>
-                                        <NavDropdown.Item key={index} href={`/catalogs/${item[0]}`}>{item[1]}</NavDropdown.Item>
-                                    )
-                                })}
-
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item >
-                                    Категории
-                                </NavDropdown.Item>
-                            </NavDropdown>
-                        </Nav>
-                        <Form className="d-flex">
-                            <Form.Control
-                                type="search"
-                                placeholder="Поиск"
-                                className="me-2"
-                                aria-label="Search"
-                            />
-                            <Button variant="outline-success">Найти</Button>
-                        </Form>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar> */}
 
         </>
     );
