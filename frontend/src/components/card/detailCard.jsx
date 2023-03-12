@@ -2,12 +2,11 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
-
-
+import Basket from "../../state/basket";
 
 import "./detailCard.css"
 
-export const DetailProduct = ({ name, description, color, gender, price, category }) => {
+export const DetailProduct = ({ name, description, color, gender, price, category, img }) => {
     const navigate = useNavigate();
 
     return (
@@ -15,8 +14,8 @@ export const DetailProduct = ({ name, description, color, gender, price, categor
             <div className="mainSection">
 
                 <div className="imgSection">
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="../img/card03.jpg" />
+                    <Card >
+                        <Card.Img  variant="top" src={`${img}`} />
                     </Card>
                 </div>
 
@@ -41,7 +40,10 @@ export const DetailProduct = ({ name, description, color, gender, price, categor
 
 
                             </Card.Text>
-                            <Button variant="primary" onClick={()=>navigate(`/catalogs/${category}`)}>Назад</Button>
+                            <div className="btn-link">
+                                <Button variant="primary" onClick={() => navigate(`/catalogs/${category}`)}>Назад</Button>
+                                <Button variant="success" onClick={() => {navigate(`/basket`); Basket.addPoducts({ name, price, img}) }}>Купить</Button>
+                            </div>
                         </Card.Body>
                     </Card>
                 </div>

@@ -1,3 +1,18 @@
 .whiteText{
     color:white
 }
+.btn{
+    cursor: pointer;
+    float: left;
+    
+}
+.btn:first-child {
+    margin-right:50px;
+}
+.btn:active{
+
+}
+.basket{
+    display: flex;
+    flex-direction: row;
+}
