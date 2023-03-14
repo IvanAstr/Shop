@@ -3,6 +3,7 @@ import { observer } from "mobx-react-lite";
 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { useNavigate } from 'react-router-dom';
 
 import Basket from "../state/basket.js";
 import "./basket.css"
@@ -10,8 +11,11 @@ import "./basket.css"
 import { ImBin } from "react-icons/im";
 import { BsCart3 } from "react-icons/bs";
 
+import {MoadalWindow} from "../components/modals/Modal"
 
 export const BasketProduct = observer(() => {
+    const navigate = useNavigate();
+
     // const [basket, setBasket] 
     // { console.log(Basket.poducts[0]) }
 
@@ -26,7 +30,7 @@ export const BasketProduct = observer(() => {
 
     //     }
     // }
-
+    const [modalActive, setModalActive] = useState(false);
 
 
     return (
@@ -47,16 +51,21 @@ export const BasketProduct = observer(() => {
                                         Цена: {p.price} р.
                                         Количество: {p.count}
                                     </Card.Text>
-                                    <Button variant="success" >Оформить</Button>
+                                    <Button variant="success" onClick={() => {setModalActive(true)  }}>Оформить</Button>
                                     {/* <Button variant="primary" onClick={() => incriment()} >+</Button>
                                     <Button variant="primary" onClick={() => dicriment()}>-</Button> */}
                                     <Button variant="danger" onClick={() => Basket.removePoducts(p.id)}><ImBin /></Button>
                                 </Card.Body>
                             </Card>
                         )
+
+                        
                     }
+
                 </div>
             </div>
+            <MoadalWindow active = {modalActive} setActive = {setModalActive} />
+
         </>
     )
 })

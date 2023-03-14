@@ -1,0 +1,16 @@
+.qr{
+    width: 160%;
+    height: 160%;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    transform: scale(0);
+
+}
+
+.qr.active{
+    transform: scale(1);
+}
+.qr__img{
+    max-width:300px;
+    margin-top: 17%;
+}
