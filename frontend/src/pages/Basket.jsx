@@ -5,8 +5,10 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
 
+import { MoadalWindow } from "../components/modals/Modal";
 import Basket from "../state/basket.js";
 import "./basket.css"
+import Counter from "../state/counter";
 
 import { ImBin } from "react-icons/im";
 import { BsCart3 } from "react-icons/bs";
@@ -14,30 +16,17 @@ import { BsCart3 } from "react-icons/bs";
 export const BasketProduct = observer(() => {
     const navigate = useNavigate();
 
-    // const [basket, setBasket] 
-    // { console.log(Basket.poducts[0]) }
-
-    // const [countPrice, setCount] = useState(1);
-
-    // const incriment = () => {
-    //     setCount(count + 1);
-    // }
-    // const dicriment = () => {
-    //     if (count > 1) {
-    //         setCount(count - 1);
-
-    //     }
-    // }
-
+    { console.log(Basket.poducts[0]) }
+    const [modalActive,setModalActive] = useState(false);
 
     return (
         <>
             <div className="sektion">
                 <h1>Корзина <BsCart3 /></h1>
 
+                <MoadalWindow active={modalActive} setActive={setModalActive}/>
 
                 <div className="basket">
-
                     {
                         Basket.poducts.map((p, index )=>
                             <Card className="basketProduct" key={index} >
@@ -45,13 +34,13 @@ export const BasketProduct = observer(() => {
                                 <Card.Body className="contennt">
                                     <Card.Title>{p.title}</Card.Title>
                                     <Card.Text>
-                                        Цена: {p.price} р.
-                                        Количество: {p.count}
                                     </Card.Text>
-                                    <Button variant="success" onClick={() => { navigate("/payment")  }}>Оформить</Button>
-                                    {/* <Button variant="primary" onClick={() => incriment()} >+</Button>
-                                    <Button variant="primary" onClick={() => dicriment()}>-</Button> */}
+
+                                    <Counter index={index} price={p.price}/>
+                                    <br/>
+                                    <Button variant="success" onClick={() => {setModalActive(true) /*navigate("/payment"*/ }}>Оформить</Button>
                                     <Button variant="danger" onClick={() => Basket.removePoducts(index)}><ImBin /></Button>
+
                                 </Card.Body>
                             </Card>
                         )

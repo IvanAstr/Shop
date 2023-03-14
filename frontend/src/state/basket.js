@@ -18,6 +18,11 @@ class Basket{
         this.poducts.splice(index,1);
     }
 
+    // costAndQuantity(cost,quantity,index){
+    //     this.poducts.push(product)
+
+    // }
+
 }
 
 export default new Basket();

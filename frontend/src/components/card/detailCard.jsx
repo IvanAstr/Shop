@@ -41,8 +41,8 @@ export const DetailProduct = ({ name, description, color, gender, price, categor
 
                             </Card.Text>
                             <div className="btn-link">
-                                <Button variant="primary" onClick={() => navigate(`/catalogs/${category}`)}>Назад</Button>
-                                <Button variant="success" onClick={() => {navigate(`/basket`); Basket.addPoducts({ name, price, img}) }}>Купить</Button>
+                                <Button className='btn' variant="primary" onClick={() => navigate(`/catalogs/${category}`)}>Назад</Button>
+                                <Button className='btn' variant="success" onClick={() => {navigate(`/basket`); Basket.addPoducts({ name, price, img}) }}>Купить</Button>
                             </div>
                         </Card.Body>
                     </Card>

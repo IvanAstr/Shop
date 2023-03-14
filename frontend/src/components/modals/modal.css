@@ -1,0 +1,21 @@
+.qr{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    transform: scale(0);
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    
+}
+
+
+
+.qr.active{
+    transform: scale(1);
+}
+.qr__img{
+    max-width:300px;
+    margin-top: 17%;
+}
