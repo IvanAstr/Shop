@@ -11,8 +11,6 @@ import "./basket.css"
 import { ImBin } from "react-icons/im";
 import { BsCart3 } from "react-icons/bs";
 
-import {MoadalWindow} from "../components/modals/Modal"
-
 export const BasketProduct = observer(() => {
     const navigate = useNavigate();
 
@@ -30,7 +28,6 @@ export const BasketProduct = observer(() => {
 
     //     }
     // }
-    const [modalActive, setModalActive] = useState(false);
 
 
     return (
@@ -42,8 +39,8 @@ export const BasketProduct = observer(() => {
                 <div className="basket">
 
                     {
-                        Basket.poducts.map(p =>
-                            <Card className="basketProduct" key={p.id} >
+                        Basket.poducts.map((p, index )=>
+                            <Card className="basketProduct" key={index} >
                                 <Card.Img className="imgg" variant="top" src={p.img} style={{ width: "20rem" }} />
                                 <Card.Body className="contennt">
                                     <Card.Title>{p.title}</Card.Title>
@@ -51,10 +48,10 @@ export const BasketProduct = observer(() => {
                                         Цена: {p.price} р.
                                         Количество: {p.count}
                                     </Card.Text>
-                                    <Button variant="success" onClick={() => {setModalActive(true)  }}>Оформить</Button>
+                                    <Button variant="success" onClick={() => { navigate("/payment")  }}>Оформить</Button>
                                     {/* <Button variant="primary" onClick={() => incriment()} >+</Button>
                                     <Button variant="primary" onClick={() => dicriment()}>-</Button> */}
-                                    <Button variant="danger" onClick={() => Basket.removePoducts(p.id)}><ImBin /></Button>
+                                    <Button variant="danger" onClick={() => Basket.removePoducts(index)}><ImBin /></Button>
                                 </Card.Body>
                             </Card>
                         )
@@ -63,8 +60,8 @@ export const BasketProduct = observer(() => {
                     }
 
                 </div>
+
             </div>
-            <MoadalWindow active = {modalActive} setActive = {setModalActive} />
 
         </>
     )

@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
 
-export const Qr = () => {
+export const Payment = () => {
     const navigate = useNavigate();
 
     return (<>

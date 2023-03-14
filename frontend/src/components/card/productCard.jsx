@@ -20,8 +20,8 @@ export const Products = ({ id, title,price,img }) => {
 
         </Card.Text>
         <div className="ls-2">
-          <Button style={{ margin: '0' }} className="mb-1" onClick={() => navigate(`/product/${id}`)}>Подробнее</Button>
-          <Button style={{ margin: '0' }} className="mb-1" variant="success" onClick={() => { navigate(`/basket`);Basket.addPoducts({id,title, price, img,count}) }}>Купить</Button>
+          <Button style={{ margin: '0' }} className="mb-1 button" onClick={() => navigate(`/product/${id}`)}>Подробнее</Button>
+          <Button style={{ margin: '0' }} className="mb-1 button" variant="success" onClick={() => {Basket.addPoducts({id,title, price, img,count}) }}>Купить</Button>
         </div>
       </Card.Body>
     </Card>

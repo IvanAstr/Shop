@@ -8,7 +8,7 @@ import { Product } from './pages/Product';
 import { NotFound } from './pages/NotFound';
 import { ContactUs } from './pages/Contacts.js';
 import {BasketProduct} from './pages/Basket';
-import { Qr } from './pages/qr';
+import { Payment } from './pages/Payment';
 
 
 
@@ -22,7 +22,7 @@ export const UseRouter = () => {
             <Route path="/product/:id" element={<Product/>}/>
             <Route path="/contacts" element={<ContactUs/>}/>
             <Route path="/basket" element={<BasketProduct/>}/>
-            <Route path="/qr" element={<Qr/>}/>
+            <Route path="/payment" element={<Payment/>}/>
             <Route path="*" element={<NotFound/>}/>
 
         </Routes>

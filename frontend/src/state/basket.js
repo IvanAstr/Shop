@@ -13,8 +13,9 @@ class Basket{
         this.poducts.push(product)
 
     }
-    removePoducts(id){
-        this.poducts = this.poducts.filter(product => product.id !== id)
+    removePoducts(index){
+        // this.poducts = this.poducts.filter(product => product.id !== id)
+        this.poducts.splice(index,1);
     }
 
 }
