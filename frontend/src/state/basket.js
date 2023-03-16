@@ -4,6 +4,9 @@ class Basket{
     poducts = [
 
     ]
+    myProduct = [
+        
+    ]
 
     constructor(){
         makeAutoObservable(this)
@@ -18,6 +21,9 @@ class Basket{
         this.poducts.splice(index,1);
     }
 
+    findProduct(index){
+        this.myProduct = this.poducts[index];
+    }
     // costAndQuantity(cost,quantity,index){
     //     this.poducts.push(product)
 

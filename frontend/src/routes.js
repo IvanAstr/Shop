@@ -8,8 +8,8 @@ import { Product } from './pages/Product';
 import { NotFound } from './pages/NotFound';
 import { ContactUs } from './pages/Contacts.js';
 import {BasketProduct} from './pages/Basket';
-import { Payment } from './pages/Payment';
-
+import { PaymentUs } from "./pages/PaymentUs"
+import {Auth} from './pages/Auth';
 
 
 export const UseRouter = () => {
@@ -22,7 +22,9 @@ export const UseRouter = () => {
             <Route path="/product/:id" element={<Product/>}/>
             <Route path="/contacts" element={<ContactUs/>}/>
             <Route path="/basket" element={<BasketProduct/>}/>
-            <Route path="/payment" element={<Payment/>}/>
+            <Route path="/payment" element={<PaymentUs/>}/>
+            <Route path="/auth" element={<Auth/>}/>
+            
             <Route path="*" element={<NotFound/>}/>
 
         </Routes>

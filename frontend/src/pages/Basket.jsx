@@ -5,7 +5,6 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
 
-import { MoadalWindow } from "../components/modals/Modal";
 import Basket from "../state/basket.js";
 import "./basket.css"
 import Counter from "../state/counter";
@@ -24,7 +23,6 @@ export const BasketProduct = observer(() => {
             <div className="sektion">
                 <h1>Корзина <BsCart3 /></h1>
 
-                <MoadalWindow active={modalActive} setActive={setModalActive}/>
 
                 <div className="basket">
                     {
@@ -35,17 +33,15 @@ export const BasketProduct = observer(() => {
                                     <Card.Title>{p.title}</Card.Title>
                                     <Card.Text>
                                     </Card.Text>
-
-                                    <Counter index={index} price={p.price}/>
+                                     Цена: {p.price} р.
+                                    {/* <Counter index={index} price={p.price}/> */}
                                     <br/>
-                                    <Button variant="success" onClick={() => {setModalActive(true) /*navigate("/payment"*/ }}>Оформить</Button>
+                                    <Button variant="success" onClick={() => {/*setModalActive(true)*/ navigate("/payment"); Basket.findProduct(index) }}>Оформить</Button>
                                     <Button variant="danger" onClick={() => Basket.removePoducts(index)}><ImBin /></Button>
 
                                 </Card.Body>
                             </Card>
                         )
-
-                        
                     }
 
                 </div>
